@@ -18,7 +18,7 @@ const Sidebar_Navigation = () => {
 
 
   return (
-    <div className='w-[272px] h-[100vh] bg-[#33074F] flex flex-col '> 
+    <div className='w-[272px] h-[100vh] bg-[#33074F] flex flex-col'> 
       <div className='w-[272px] h-[80px] bg-bg-opacity bg-[#EBE6ED] fixed justify-center items-center flex'>
         <h3 className='text-white font-semibold font-inter text-[24px]'>Acmy Solutions</h3>
         <button className='sm:hidden' onClick={() => setIsOpen(!isOpen)}>

@@ -52,22 +52,21 @@ const Tasks = () => {
 
     return (
         <div className='h-[632px] w-[656px] bg-white shadow-md flex flex-col border rounded-[8px]'>
-            <div className='sticky top-0 z-10 h-[60px] flex flex-col justify-center items-start bg-white'>
+            <div className='sticky top-0 z-10 h-[40px] flex flex-col justify-center items-start bg-white'>
                 <p className="text-black text-[16px] font-inter font-semibold ml-[12px]">Tasks</p>
             </div>
             <hr className="border-[#E4E7EC] mt-2 w-[656px]" />
-            <TableContainer component={Paper} sx={{ maxHeight: '620px', overflow: 'auto' }}>
-    {/* Adjust the height as needed */}
-    <Table sx={{ minWidth: 650, border: 0 }} aria-label="simple table">
-        <TableHead>
-            <TableRow className='bg-[#F2F2F2]' sx={{ height: '40px' }}>
-                <TableCell align='center' sx={{ fontSize: '12px', fontFamily: 'Inter' }}>Status</TableCell>
-                <TableCell align='left' sx={{ fontSize: '12px', fontFamily: 'Inter', padding: '2px' }}>Task Name</TableCell>
-                <TableCell align='left' sx={{ fontSize: '12px', fontFamily: 'Inter', padding: '2px' }}>Created by</TableCell>
-                <TableCell align='center' sx={{ fontSize: '12px', fontFamily: 'Inter', padding: '2px' }}>Priority</TableCell>
-                <TableCell align='center' sx={{ fontSize: '12px', fontFamily: 'Inter' }}>Date</TableCell>
-            </TableRow>
-        </TableHead>
+            <TableContainer component={Paper} sx={{ maxHeight: '640px', overflow: 'auto' }}>
+            <Table sx={{ minWidth: 650, border: 0 }} aria-label="simple table">
+                <TableHead>
+                    <TableRow className='bg-[#F2F2F2]' sx={{ height: '40px' }}>
+                        <TableCell align='center' sx={{ fontSize: '12px', fontFamily: 'Inter' }}>Status</TableCell>
+                        <TableCell align='left' sx={{ fontSize: '12px', fontFamily: 'Inter', padding: '2px' }}>Task Name</TableCell>
+                        <TableCell align='left' sx={{ fontSize: '12px', fontFamily: 'Inter', padding: '2px' }}>Created by</TableCell>
+                        <TableCell align='center' sx={{ fontSize: '12px', fontFamily: 'Inter', padding: '2px' }}>Priority</TableCell>
+                        <TableCell align='center' sx={{ fontSize: '12px', fontFamily: 'Inter' }}>Date</TableCell>
+                    </TableRow>
+                </TableHead>
                 <TableBody>
                 {(rowsPerPage > 0
                     ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
