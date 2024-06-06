@@ -56,7 +56,7 @@ const Tasks_Priorities = () => {
   }, []);
 
   return (
-    <div className='w-[440px] h-[253px] bg-white shadow-md rounded-[8px] flex flex-col'>
+    <div className='w-[440px] h-[253px] bg-white shadow-md rounded-[8px] flex flex-col border'>
         <div className='sticky top-0 z-10 h-[60px] flex flex-col justify-center items-start bg-white'>
             <p className="text-black text-[16px] font-inter font-semibold ml-[12px]">Tasks Priorities</p>
         </div>

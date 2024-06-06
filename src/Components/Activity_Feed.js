@@ -11,7 +11,7 @@ const Activity_Feed = () => {
       ]
 
     return (
-        <div className='relative h-[363px] w-[440px] bg-white shadow-md rounded-[8px]'>
+        <div className='relative h-[363px] w-[440px] bg-white shadow-md rounded-[8px] border'>
             <div className='sticky top-0 z-10 h-[60px] flex flex-col justify-center items-start bg-white'>
                 <p className="text-black text-[16px] font-inter font-semibold ml-[12px]">Activity Feed</p>
             </div>
