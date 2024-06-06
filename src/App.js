@@ -1,9 +1,10 @@
 import './App.css';
+import Sidebar_Navigation from './Components/Sidebar_Navigation';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="flex">
+      <Sidebar_Navigation />
     </div>
   );
 }
