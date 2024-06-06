@@ -32,7 +32,7 @@ const Dashboard = () => {
 
       <div className='flex flex-row mx-[24px] justify-between'>
         <Tasks />
-        <div className='flex flex-col gap-y-[24px]'>
+        <div className='flex flex-col gap-y-[18px]'>
           <Tasks_Priorities />
           <Activity_Feed  />
         </div>

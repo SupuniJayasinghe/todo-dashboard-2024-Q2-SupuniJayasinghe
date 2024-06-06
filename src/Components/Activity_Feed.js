@@ -17,30 +17,30 @@ const Activity_Feed = () => {
             </div>
             <hr className="border-[#E4E7EC] mt-2 w-[440px]" />
 
-            <div className='overflow-y-auto h-[303px]'>
-            {feeds.map((feed, index) => (
-                <div key={index} className='flex flex-col p-2'>
-                    <div className="flex items-center gap-2 my-[2px] h-[70px] p-5 ">
-                        <img 
-                            src={profilepic} 
-                            alt="profile_image" 
-                            className="w-8 h-8"
-                        />
-                        <div className='flex flex-col justify-start'>
-                            <p className="text-black font-inter text-[14px] gap-2">
-                                <span className="font-semibold p-1">{feed.name}</span>
-                                <span className="text-black text-[14px] font-inter p-1">{feed.action}</span>
-                                <a className='text-14px text-pink-500'>{feed.target}</a>
-                            </p>
-                            <p className="text-[#757575] text-[12px] font-inter leading-4">{feed.time}</p>
+            <div style={{ overflowY: 'auto', height: '303px', paddingRight: '10px' }}>
+                {feeds.map((feed, index) => (
+                    <div key={index} className='flex flex-col p-2'>
+                        <div className="flex items-center gap-2 my-[2px] h-[70px] p-5 ">
+                            <img 
+                                src={profilepic} 
+                                alt="profile_image" 
+                                className="w-8 h-8"
+                            />
+                            <div className='flex flex-col justify-start'>
+                                <p className="text-black font-inter text-[14px] gap-2">
+                                    <span className="font-semibold p-1">{feed.name}</span>
+                                    <span className="text-black text-[14px] font-inter p-1">{feed.action}</span>
+                                    <a className='text-14px text-pink-500'>{feed.target}</a>
+                                </p>
+                                <p className="text-[#757575] text-[12px] font-inter leading-4">{feed.time}</p>
+                            </div>
                         </div>
+                        <hr className="border-[#E4E7EC] mt-2 w-full" />
                     </div>
-                    <hr className="border-[#E4E7EC] mt-2 w-full" />
-                </div>
-            ))}
+                ))}
             </div>
-    </div>
-)
+        </div>
+    )
 }
 
 export default Activity_Feed
