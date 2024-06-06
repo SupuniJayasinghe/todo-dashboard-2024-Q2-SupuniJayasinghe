@@ -1,7 +1,7 @@
 import Sidebar_Navigation from './Components/Sidebar_Navigation';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header_Navigation from './Components/Header_Navigation';
 import Dashboard from './Pages/Dashboard';
+import Activity_Feed from './Components/Activity_Feed';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/"  element={<Dashboard/>} />
-            <Route path="/nav"  element={<Header_Navigation/>} />
+            <Route path="/activity"  element={<Activity_Feed/>} />
           </Routes>
         </div>
       </div>
