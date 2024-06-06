@@ -2,10 +2,13 @@ import React from 'react'
 import Header_Navigation from '../Components/Header_Navigation'
 import closeicon from '../Assets/Close.png'
 import rings from '../Assets/Rings.svg'
+import Tasks_Priorities from '../Components/Tasks_Priorities'
+import Activity_Feed from '../Components/Activity_Feed'
+import Tasks from '../Components/Tasks'
 
 const Dashboard = () => {
   return (
-    <div className='flex flex-col gap-y-[24px] '>
+    <div className='flex flex-col gap-y-[24px] overflow-auto'>
       <Header_Navigation />
       
       <div className='flex flex-row mx-[24px] bg-white rounded-[8px] h-[120px] shadow-md border-[1px] px-[16px] justify-between'>
@@ -24,6 +27,14 @@ const Dashboard = () => {
                 src={closeicon}
                 className='w-[24px] h-[24px] cursor-pointer mt-[16px]' 
             />
+        </div>
+      </div>
+
+      <div className='flex flex-row mx-[24px] justify-between'>
+        <Tasks />
+        <div className='flex flex-col gap-y-[24px]'>
+          <Tasks_Priorities />
+          <Activity_Feed  />
         </div>
       </div>
       
