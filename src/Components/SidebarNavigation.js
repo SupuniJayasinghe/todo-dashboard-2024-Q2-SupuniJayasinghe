@@ -16,7 +16,6 @@ const Sidebar_Navigation = () => {
     },
   ]
 
-
   return (
     <div className='w-[272px] h-[100vh] bg-[#33074F] flex flex-col'> 
       <div className='w-[272px] h-[80px] bg-bg-opacity bg-[#EBE6ED] justify-center items-center flex'>
@@ -25,9 +24,9 @@ const Sidebar_Navigation = () => {
           <img src={MenuIcon} alt="menu" />
         </button>
       </div>
-      <ul className={`flex flex-col mt-[140px] ml-[16px] ${isOpen ? 'block' : 'hidden'} sm:flex`}>
+      <ul className={`flex flex-col mt-[60px] ml-[16px] ${isOpen ? 'block' : 'hidden'} sm:flex`}>
         {menuItems.map((item, index) => (
-          <li key={index} className='bg-bg-opacity bg-[#EBE6ED] rounded-3xl w-[240px] h-[40px] flex  items-center flex-row gap-x-[8px] pl-[12px] hover:bg-purple-600 cursor-pointer'>
+          <li key={index} className='bg-bg-opacity bg-[#EBE6ED] rounded-3xl w-[240px] h-[40px] flex  items-center flex-row gap-x-[8px] pl-[12px] hover:bg-purple-600 cursor-pointer mb-5'>
             {item.icon === 'dashboard' && (
               <img
                 src={dashboard}
