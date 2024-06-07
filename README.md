@@ -56,5 +56,10 @@ The project fetches tasks from a mock API using Axios. The relevant code can be 
 
 **Running the test files using:**
     ```bash
+<<<<<<< HEAD
     npm test 
     ```
+=======
+    npm test
+    ```
+>>>>>>> a27456de385b73a45bb3fc06c364f922bd55e39f
