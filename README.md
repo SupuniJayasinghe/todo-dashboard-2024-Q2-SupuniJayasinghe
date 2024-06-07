@@ -55,7 +55,7 @@ The project fetches tasks from a mock API using Axios. The relevant code can be 
 ## Running Tests
 
 **Running the test files using:
-    ```bash
+  
     npm test 
-    ```
+
 
