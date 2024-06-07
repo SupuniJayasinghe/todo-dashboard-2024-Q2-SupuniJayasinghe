@@ -19,7 +19,7 @@ To set up and run this project locally, follow these steps:
 1. **Clone the repository:**
     ```bash
     git clone https://github.com/SupuniJayasinghe/todo-dashboard-2024-Q2-SupuniJayasinghe
-    cd acmy-solutions-dashboard
+    cd todo-dashboard-2024-Q2-SupuniJayasinghe
     ```
 
 2. **Install the dependencies:**
