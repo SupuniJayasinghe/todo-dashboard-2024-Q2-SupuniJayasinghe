@@ -5,7 +5,7 @@ import menuicon from '../Assets/Chevron-down.png'
 
 const Header_Navigation = () => {
   return (
-    <div className='flex h-[80px] bg-white shadow-md items-center justify-between px-[24px] flex-row sm:flex-row'>
+    <div className='flex md:h-[80px] bg-white shadow-md items-center justify-between px-[24px] flex-row sm:flex-row h-[60px]'>
       <h4 className='font-inter text-black text-[20px] font-semibold'>Dashboard</h4>
       <div className='flex flex-row items-center justify-between gap-x-5'>
         <img 

@@ -7,16 +7,13 @@ import TasksPriorities from './Components/TasksPriorities';
 function App() {
   return (
     <Router>
-      <div className="flex">
-        <div className="bg-[#FAFAFA] overflow-auto">
-          <SidebarNavigation />
-        </div>
+      <div className="flex flex-col sm:flex-row">
+        <SidebarNavigation />
         <div className="flex-grow">
           <Routes>
-            <Route path="/"  element={<Dashboard/>} />
-            <Route path="/activity"  element={<ActivityFeed/>} />
-            <Route path="/task-priorities"  element={<TasksPriorities/>} />
-
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/activity" element={<ActivityFeed />} />
+            <Route path="/task-priorities" element={<TasksPriorities />} />
           </Routes>
         </div>
       </div>
