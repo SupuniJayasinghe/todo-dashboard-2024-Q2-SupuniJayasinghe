@@ -5,13 +5,13 @@ import menuicon from '../Assets/Chevron-down.png'
 
 const Header_Navigation = () => {
   return (
-    <div className='flex h-[80px] bg-white shadow-md items-center justify-between px-[24px] flex-col sm:flex-row'>
+    <div className='flex h-[80px] bg-white shadow-md items-center justify-between px-[24px] flex-row sm:flex-row'>
       <h4 className='font-inter text-black text-[20px] font-semibold'>Dashboard</h4>
-      <div className='flex flex-row justify-between items-center gap-x-5'>
+      <div className='flex flex-row items-center justify-between gap-x-5'>
         <img 
             src={bell} 
             alt='bell icon'
-            className='h-[24px] w-[24px] ' 
+            className='h-[24px] w-[24px] cursor-pointer ' 
         />
         <div className='flex flex-row justify-between w-[72px] items-center'>
             <img 

@@ -35,43 +35,98 @@ const Tasks = ({tasks}) => {
             )}
         </div>
     );
-
-    //styled tooltip
-    const CustomTooltip = styled(({ className, ...props }) => (
+   
+    // Base CustomTooltip component
+    const BaseCustomTooltip = styled(({ className, ...props }) => (
         <Tooltip {...props} classes={{ popper: className }} />
-      ))({
+    ))({
         [`& .${tooltipClasses.tooltip}`]: {
-          backgroundColor: 'white',
-          color: 'green',
-          height: '49px',
-          textAlign: 'center',
-          width: '100px',
-          borderRadius: '30px',
-          border: '1px solid #EAECF0',
-          fontSize: '10px',
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center', 
+        backgroundColor: 'transparent',
+        boxShadow: 'none', 
+        position: 'relative', 
+        padding: 0, 
         },
-      });
-      
-      const CustomTooltipRed = styled(({ className, ...props }) => (
-        <Tooltip {...props} classes={{ popper: className }} />
-      ))({
+        [`& .${tooltipClasses.arrow}`]: {
+        color: 'transparent', 
+        '&::before': {
+            border: 'none', 
+            boxShadow: 'none', 
+        },
+        },
+    });
+    
+    // CustomTooltip with green text
+    const CustomTooltip = styled(BaseCustomTooltip)(({ theme }) => ({
         [`& .${tooltipClasses.tooltip}`]: {
-          backgroundColor: 'white',
-          color: '#F2C94C',
-          height: '49px',
-          textAlign: 'center',
-          width: '100px',
-          borderRadius: '30px',
-          border: '1px solid #EAECF0',
-          fontSize: '10px',
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center', 
+        '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '100px',
+            height: '49px',
+            backgroundColor: 'white',
+            borderRadius: '30px',
+            border: '1px solid #EAECF0',
+            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', 
         },
-      });
+        '&::after': {
+            content: '"In-Progress"',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '80px',
+            height: '29px',
+            backgroundColor: '#C6FFD1', 
+            color: 'green',
+            borderRadius: '15px',
+            fontSize: '10px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            border: '1px solid #EAECF0',
+        },
+        },
+    }));
+    
+    // CustomTooltipYellow with yellow text
+    const CustomTooltipYellow = styled(BaseCustomTooltip)(({ theme }) => ({
+        [`& .${tooltipClasses.tooltip}`]: {
+        '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '100px',
+            height: '49px',
+            backgroundColor: 'white',
+            borderRadius: '30px',
+            border: '1px solid #EAECF0',
+            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+        },
+        '&::after': {
+            content: '"In-Progress"',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '80px',
+            height: '29px',
+            backgroundColor: '#FFF7D1', 
+            color: '#F2C94C',
+            borderRadius: '15px',
+            fontSize: '10px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            border: '1px solid #EAECF0',
+        },
+        },
+    }));
+    
 
     return (
         <div className='h-[632px] w-[656px] bg-white shadow-md flex flex-col border rounded-[8px]'>
@@ -109,9 +164,9 @@ const Tasks = ({tasks}) => {
                             <CustomTooltip title="Task Completed" arrow>
                             <img src={completed} alt="Done" width="20" height="20" />
                             </CustomTooltip> : 
-                            <CustomTooltipRed title="Task In Progress" arrow>
+                            <CustomTooltipYellow title="Task In Progress" arrow>
                             <img src={inprogress} alt="In Progress" width="20" height="20" />
-                            </CustomTooltipRed>
+                            </CustomTooltipYellow>
                         }
                     </TableCell>
                     <TableCell sx={{ fontSize: '10px', fontFamily: 'Inter', padding: '2px' }}>

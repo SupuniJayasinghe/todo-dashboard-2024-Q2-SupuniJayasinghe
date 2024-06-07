@@ -34,7 +34,7 @@ const Sidebar_Navigation = () => {
                 className='w-[24px] h-[24px] mr-[10px]'
               />
             )}
-           <span className='font-inter-regular text-white text-lg'>{item.title}</span> 
+           <span className='text-lg text-white font-inter-regular'>{item.title}</span> 
           </li>
         ))}
       </ul>

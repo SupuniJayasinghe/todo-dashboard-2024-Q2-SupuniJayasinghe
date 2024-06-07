@@ -18,8 +18,6 @@ const Tasks_Priorities = ({ tasks }) => {
         return acc;
       }, {}) : {};
   
-      //console.log(priorities);
-  
       const ctx = chartRef.current.getContext('2d');
       chartInstanceRef.current = new Chart(ctx, {
         type: 'bar',
@@ -64,12 +62,12 @@ const Tasks_Priorities = ({ tasks }) => {
   }, [tasks]);
 
   return (
-    <div className='w-[440px] h-[253px] bg-white shadow-md rounded-[8px] flex flex-col border'>
+    <div className='w-full md:w-[440px] h-auto md:h-[253px] bg-white shadow-md rounded-[8px] flex flex-col border'>
         <div className='sticky top-0 z-10 h-[60px] flex flex-col justify-center items-start bg-white'>
             <p className="text-black text-[16px] font-inter font-semibold ml-[12px]">Tasks Priorities</p>
         </div>
-        <hr className="border-[#E4E7EC] mt-2 w-[440px]" />     
-        <div className="container m-auto mt-10 h-[300px] w-[250px]">
+        <hr className="border-[#E4E7EC] mt-2 w-full" />     
+        <div className="container mx-auto mt-10 h-[200px] md:h-[300px] w-full md:w-[250px] justify-center flex">
           <canvas ref={chartRef}></canvas>
         </div>
     </div>
