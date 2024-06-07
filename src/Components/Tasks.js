@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios';
+import React, { useState } from 'react'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -16,7 +15,7 @@ import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 
 const Tasks = ({tasks}) => {
     const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(8);
+    const rowsPerPage = 8;
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);

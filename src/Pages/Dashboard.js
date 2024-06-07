@@ -1,9 +1,9 @@
 import React from 'react'
-import Header_Navigation from '../Components/Header_Navigation'
+import HeaderNavigation from '../Components/HeaderNavigation'
 import closeicon from '../Assets/Close.png'
 import rings from '../Assets/Rings.svg'
-import Tasks_Priorities from '../Components/Tasks_Priorities'
-import Activity_Feed from '../Components/Activity_Feed'
+import TasksPriorities from '../Components/TasksPriorities'
+import ActivityFeed from '../Components/ActivityFeed'
 import Tasks from '../Components/Tasks'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
@@ -27,7 +27,7 @@ const Dashboard = () => {
 
     return (
       <div className='flex flex-col gap-y-[24px] overflow-auto'>
-        <Header_Navigation />
+        <HeaderNavigation />
         
         <div className='flex flex-row mx-[24px] bg-white rounded-[8px] h-[120px] shadow-md border-[1px] px-[16px] justify-between'>
           <div className='flex flex-col items-start justify-start pt-[16px]'>
@@ -38,11 +38,13 @@ const Dashboard = () => {
           <div className='flex flex-row gap-x-5'>
               <img 
                   src={rings}
+                  alt='rings'
                   className='w-[167px] h-[120px] '
               />
           
               <img 
                   src={closeicon}
+                  alt='close icon'
                   className='w-[24px] h-[24px] cursor-pointer mt-[16px]' 
               />
           </div>
@@ -51,8 +53,8 @@ const Dashboard = () => {
         <div className='flex flex-row mx-[24px] justify-between'>
           <Tasks tasks={rows}/>
           <div className='flex flex-col gap-y-[18px]'>
-            <Tasks_Priorities tasks={rows}/>
-            <Activity_Feed  />
+            <TasksPriorities tasks={rows}/>
+            <ActivityFeed  />
           </div>
         </div>
         

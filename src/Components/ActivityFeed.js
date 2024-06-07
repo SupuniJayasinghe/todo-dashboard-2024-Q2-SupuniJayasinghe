@@ -30,7 +30,7 @@ const Activity_Feed = () => {
                                 <p className="text-black font-inter text-[14px] gap-2">
                                     <span className="font-semibold p-1">{feed.name}</span>
                                     <span className="text-black text-[14px] font-inter p-1">{feed.action}</span>
-                                    <a className='text-14px text-pink-500'>{feed.target}</a>
+                                    <button className='text-14px text-pink-500'>{feed.target}</button>
                                 </p>
                                 <p className="text-[#757575] text-[12px] font-inter leading-4">{feed.time}</p>
                             </div>

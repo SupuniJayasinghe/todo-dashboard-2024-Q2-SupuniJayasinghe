@@ -10,15 +10,18 @@ const Header_Navigation = () => {
       <div className='flex flex-row justify-between items-center gap-x-5'>
         <img 
             src={bell} 
+            alt='bell icon'
             className='h-[24px] w-[24px] ' 
         />
         <div className='flex flex-row justify-between w-[72px] items-center'>
             <img 
                 src={profilepic} 
+                alt='profile'
                 className='h-[40px] w-[40px] ' 
             />
             <img 
                 src={menuicon} 
+                alt='menu icon'
                 className='h-[24px] w-[24px] cursor-pointer ' 
             />
         </div>
