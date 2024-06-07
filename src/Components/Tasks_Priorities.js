@@ -3,7 +3,7 @@ import { Chart, LinearScale, BarController, CategoryScale, BarElement } from 'ch
 
 Chart.register(LinearScale, BarController, CategoryScale, BarElement);
 
-const Tasks_Priorities = () => {
+const Tasks_Priorities = ({ tasks }) => {
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
 
@@ -12,34 +12,42 @@ const Tasks_Priorities = () => {
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
       }
-
+  
+      const priorities = tasks ? tasks.reduce((acc, task) => {
+        acc[task.priority] = (acc[task.priority] || 0) + 1;
+        return acc;
+      }, {}) : {};
+  
+      //console.log(priorities);
+  
       const ctx = chartRef.current.getContext('2d');
       chartInstanceRef.current = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: ['High', 'Medium', 'Low'],
           datasets: [{
-            data: [12, 19, 3],
+            data: [priorities['HIGH'] || 0, priorities['MEDIUM'] || 0, priorities['LOW'] || 0],
             backgroundColor: [
-              'blue',
-              'orange',
-              'yellow'
+              '#EB5757', // Change these to rgba colors
+              '#F2C94C',
+              '#2F80ED'
             ],
             borderColor: [
-              'blue',
-              'orange',
-              'yellow'
+              '#EB5757', // Change these to rgba colors
+              '#F2C94C',
+              '#2F80ED'
             ],
-            borderWidth: 1
+            borderWidth: 0.5
           }]
         },
         options: {
           scales: {
             y: {
-              display: false
+              display: false,
+              max: Math.max(...Object.values(priorities))
             },
             x: {
-              display: false
+              display: true
             }
           },
           plugins: {
@@ -53,7 +61,7 @@ const Tasks_Priorities = () => {
         }
       });
     }
-  }, []);
+  }, [tasks]);
 
   return (
     <div className='w-[440px] h-[253px] bg-white shadow-md rounded-[8px] flex flex-col border'>
@@ -61,8 +69,8 @@ const Tasks_Priorities = () => {
             <p className="text-black text-[16px] font-inter font-semibold ml-[12px]">Tasks Priorities</p>
         </div>
         <hr className="border-[#E4E7EC] mt-2 w-[440px]" />     
-        <div className="container m-auto mt-10 h-[200px] w-[208px]">
-            <canvas ref={chartRef}></canvas>
+        <div className="container m-auto mt-10 h-[300px] w-[250px]">
+          <canvas ref={chartRef}></canvas>
         </div>
     </div>
   );

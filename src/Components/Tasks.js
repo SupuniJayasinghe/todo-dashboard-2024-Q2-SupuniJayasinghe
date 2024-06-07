@@ -8,29 +8,13 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import inprogress from '../Assets/inprogress.svg'
 import completed from '../Assets/done.svg'
 
-const Tasks = () => {
-    const [rows, setRows] = useState([]);
+const Tasks = ({tasks}) => {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(8);
-
-    const getTasks = () => {
-        axios.get('https://6363c8f68a3337d9a2e7d805.mockapi.io/api/to-do')
-            .then(response => {
-                setRows(response?.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
-
-    useEffect(() => {
-        getTasks();
-    }, []);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -69,8 +53,8 @@ const Tasks = () => {
                 </TableHead>
                 <TableBody>
                 {(rowsPerPage > 0
-                    ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    : rows
+                    ? tasks.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    : tasks
                 ).map((row, index) => (
                     <TableRow
                     key={row.id || index}
@@ -80,7 +64,7 @@ const Tasks = () => {
                         component="th" 
                         scope="row" 
                         align='center'
-                        sx={{ fontSize: '12px', padding: '16px' }} // Adjust the padding value as needed
+                        sx={{ fontSize: '12px', padding: '16px' }} 
                     >
                         {row.completed ? 
                             <img src={completed} alt="Done" width="20" height="20" /> : 
@@ -110,7 +94,7 @@ const Tasks = () => {
             </Table>
             </TableContainer>
             <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop:'20px' }}>
-                <Pagination count={Math.ceil(rows.length / rowsPerPage)} page={page + 1} onChange={handleChangePage} shape="rounded" />
+                <Pagination count={Math.ceil(tasks.length / rowsPerPage)} page={page + 1} onChange={handleChangePage} shape="rounded" />
             </Box>
         </div>
     )
