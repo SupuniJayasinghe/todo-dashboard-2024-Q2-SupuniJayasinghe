@@ -27,7 +27,7 @@ const Dashboard = () => {
     return (
         <div className='flex flex-col gap-y-[24px] overflow-auto'>
             <HeaderNavigation />
-            <div className='flex flex-col md:flex-row mx-[24px] bg-white rounded-[8px] h-auto md:h-[120px] shadow-md border-[1px] px-[16px] justify-between'>
+            <div className='relative flex flex-col md:flex-row mx-[24px] bg-white rounded-[8px] h-auto md:h-[120px] shadow-md border-[1px] px-[16px] justify-between'>
                 <div className='flex flex-col items-start justify-start pt-[16px]'>
                     <h3 className='font-inter text-[24px] font-semibold'>Welcome back, John Doe</h3>
                     <p className='font-inter text-[14px]'>The end of the year is coming. Are you planning your performance interviews? You can do this super efficiently with Acmy.</p>
@@ -39,12 +39,12 @@ const Dashboard = () => {
                         alt='rings'
                         className='w-[167px] h-[120px]'
                     />
-                    <img 
-                        src={closeicon}
-                        alt='close icon'
-                        className='w-[24px] h-[24px] cursor-pointer mt-[16px]' 
-                    />
                 </div>
+                <img 
+                    src={closeicon}
+                    alt='close icon'
+                    className='absolute top-0 right-4 md:relative md:top-0 md:right-0 w-[24px] h-[24px] cursor-pointer mt-[16px]' 
+                />
             </div>
 
             <div className='flex flex-col md:flex-row mx-[24px] justify-between gap-4'>

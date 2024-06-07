@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Acmy Solutions Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
 
-## Available Scripts
+This project is a dashboard application built with React. It features a sidebar navigation, a header, and various components to display tasks, task priorities, and activity feeds. The layout is responsive and adjusts for different screen sizes.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Components](#components)
+- [API Integration](#api-integration)
+- [Running Tests](#running-tests)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To set up and run this project locally, follow these steps:
 
-### `npm test`
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/acmy-solutions-dashboard.git
+    cd acmy-solutions-dashboard
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install the dependencies:**
+    ```bash
+    npm install
+    ```
 
-### `npm run build`
+3. **Start the development server:**
+    ```bash
+    npm start
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Open your browser and navigate to `http://localhost:3000` to see the application running.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Navigation:** Use the sidebar to navigate between the Dashboard and other pages.
+- **Responsive Design:** On small screens, the sidebar will move to the top of the screen as a top navigation with dropdown menu.
+- **Tasks:** View and manage tasks in the Tasks section.
 
-### `npm run eject`
+## Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The project has the following structure:
+TODO-DASHBOARD-2024-Q2-SUPUNIJAYASINGHE/
+├── public/
+├── src/
+│ ├── Assets/
+│ ├── Components/
+│ │ ├── HeaderNavigation.js
+│ │ ├── SidebarNavigation.js
+│ │ ├── ActivityFeed.js
+│ │ ├── TasksPriorities.js
+│ │ ├── Tasks.js
+│ ├── Pages/
+│ │ ├── Dashboard.js
+│ ├── App.js
+│ ├── index.js
+├── .gitignore
+├── package.json
+├── README.md
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Components
 
-## Learn More
+- **HeaderNavigation:** Displays the top header navigation.
+- **SidebarNavigation:** Sidebar with navigation links.
+- **ActivityFeed:** Displays recent activities.
+- **TasksPriorities:** Shows task priorities.
+- **Tasks:** Displays a list of tasks with pagination and tooltips.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## API Integration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project fetches tasks from a mock API using Axios. The relevant code can be found in the `Dashboard.js` file:
 
-### Code Splitting
+## Running Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Running the test files using:**
+    ```bash
+    npm test
+    ```
