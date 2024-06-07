@@ -191,7 +191,7 @@ const Tasks = ({ tasks }) => {
         </Table>
       </TableContainer>
       <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: '20px' }}>
-        <Pagination count={Math.ceil(tasks.length / rowsPerPage)} page={page + 1} onChange={handleChangePage} shape="rounded" />
+        <Pagination count={Math.ceil(tasks.length / rowsPerPage)} page={page} onChange={handleChangePage} shape="rounded" />
       </Box>
     </div>
   );
