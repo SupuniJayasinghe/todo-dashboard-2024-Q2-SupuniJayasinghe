@@ -28,12 +28,12 @@ const Tasks_Priorities = ({ tasks }) => {
           datasets: [{
             data: [priorities['HIGH'] || 0, priorities['MEDIUM'] || 0, priorities['LOW'] || 0],
             backgroundColor: [
-              '#EB5757', // Change these to rgba colors
+              '#EB5757', 
               '#F2C94C',
               '#2F80ED'
             ],
             borderColor: [
-              '#EB5757', // Change these to rgba colors
+              '#EB5757', 
               '#F2C94C',
               '#2F80ED'
             ],

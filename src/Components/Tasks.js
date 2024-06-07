@@ -11,6 +11,8 @@ import Pagination from '@mui/material/Pagination';
 import Box from '@mui/material/Box';
 import inprogress from '../Assets/inprogress.svg'
 import completed from '../Assets/done.svg'
+import { styled } from '@mui/system';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 
 const Tasks = ({tasks}) => {
     const [page, setPage] = useState(0);
@@ -20,6 +22,7 @@ const Tasks = ({tasks}) => {
         setPage(newPage);
     };
 
+    //mark as done function
     const TodoCell = ({ todo, completed }) => (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             {todo}
@@ -33,6 +36,43 @@ const Tasks = ({tasks}) => {
             )}
         </div>
     );
+
+    //styled tooltip
+    const CustomTooltip = styled(({ className, ...props }) => (
+        <Tooltip {...props} classes={{ popper: className }} />
+      ))({
+        [`& .${tooltipClasses.tooltip}`]: {
+          backgroundColor: 'white',
+          color: 'green',
+          height: '49px',
+          textAlign: 'center',
+          width: '100px',
+          borderRadius: '30px',
+          border: '1px solid #EAECF0',
+          fontSize: '10px',
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+        },
+      });
+      
+      const CustomTooltipRed = styled(({ className, ...props }) => (
+        <Tooltip {...props} classes={{ popper: className }} />
+      ))({
+        [`& .${tooltipClasses.tooltip}`]: {
+          backgroundColor: 'white',
+          color: '#F2C94C',
+          height: '49px',
+          textAlign: 'center',
+          width: '100px',
+          borderRadius: '30px',
+          border: '1px solid #EAECF0',
+          fontSize: '10px',
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+        },
+      });
 
     return (
         <div className='h-[632px] w-[656px] bg-white shadow-md flex flex-col border rounded-[8px]'>
@@ -65,10 +105,14 @@ const Tasks = ({tasks}) => {
                         scope="row" 
                         align='center'
                         sx={{ fontSize: '12px', padding: '16px' }} 
-                    >
+                        >
                         {row.completed ? 
-                            <img src={completed} alt="Done" width="20" height="20" /> : 
+                            <CustomTooltip title="Task Completed" arrow>
+                            <img src={completed} alt="Done" width="20" height="20" />
+                            </CustomTooltip> : 
+                            <CustomTooltipRed title="Task In Progress" arrow>
                             <img src={inprogress} alt="In Progress" width="20" height="20" />
+                            </CustomTooltipRed>
                         }
                     </TableCell>
                     <TableCell sx={{ fontSize: '10px', fontFamily: 'Inter', padding: '2px' }}>
